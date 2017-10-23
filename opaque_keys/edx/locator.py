@@ -380,6 +380,9 @@ class CourseLocator(BlockLocatorBase, CourseKey):   # pylint: disable=abstract-m
 
         return cls(*serialized.split('/'), deprecated=True)
 
+    def __repr__(self):
+        return self._to_string()
+
 CourseKey.set_deprecated_fallback(CourseLocator)
 
 
